@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>hello there</h1>
+<div class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Constitution</a></li>
+    <li><a href="#">Minutes</a></li>
+    <li><a href="#">Tangents</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</div>
+<div class="title">
+  <h1>Knights of the Tiber!</h1>
+</div>
+<section class="about">
+  <div id="side-text">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iste ipsam veniam inventore aperiam perspiciatis repudiandae repellat alias officia corrupti, doloremque atque distinctio libero. Excepturi quidem vel ratione laudantium dolore.<p>
+  </div>
+  <div>
+    <img src="{% static 'frontend/bg.jpg' %}" class="side-image">
+  </div>
+</section>
 {% endblock %}
