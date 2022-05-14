@@ -18,9 +18,9 @@
   <div id="sidebar">
     <button onclick="expandNav()">Hamburger</button>
     <ul id="list" class="hidden">
-      <li><a href="#">Meeting Minutes</a></li>
-      <li><a href="#">Cursus Honorum</a></li>
-      <li><a href="#">Announcements</a></li>
+      <li><a href="{% url 'student_portal:minutes' %}">Meeting Minutes</a></li>
+      <li><a href="{% url 'student_portal:cursus_honorum' %}">Cursus Honorum</a></li>
+      <li><a href="{% url 'student_portal:announcements' %}">Announcements</a></li>
     </ul>
   </div>
   <div class="main-content">
