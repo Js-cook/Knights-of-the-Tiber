@@ -1,7 +1,31 @@
-{% extends 'base.html' %}
+{% extends 'base_2.html' %}
 
 {% block title %}Student Portal{% endblock %}
 
 {% block content %}
-<h2>hello world</h2>
+<script>
+  function expandNav(){
+    var sidebar = document.getElementById("list")
+    if (sidebar.className == "hidden"){
+      sidebar.className = "reveal"
+    }
+    else {
+      sidebar.className = "hidden"
+    }
+  }
+</script>
+<div class="flex-container">
+  <div id="sidebar">
+    <button onclick="expandNav()">Hamburger</button>
+    <ul id="list" class="hidden">
+      <li><a href="#">Meeting Minutes</a></li>
+      <li><a href="#">Cursus Honorum</a></li>
+      <li><a href="#">Announcements</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1>title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore dolores libero sunt ipsum temporibus odio unde fugiat, rem molestias dicta deserunt et, nesciunt, expedita reiciendis voluptas corrupti impedit illo necessitatibus?</p>
+  </div>
+</div>
 {% endblock %}
