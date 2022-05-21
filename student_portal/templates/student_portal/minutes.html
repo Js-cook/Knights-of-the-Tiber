@@ -1,1 +1,19 @@
-<h1>hi</h1>
+{% extends 'base_2.html' %}
+
+{% block title %}Minutes{% endblock %}
+
+{% block content %}
+<div class="header">
+  
+</div>
+<div class="minutes-block">
+  {% for minute in minutes %}
+  <div class="minute">
+    <div class="date-header">
+      <p>{{minute.date}}</p>
+    </div>
+    <h3>{{minute.contents}}</h3>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

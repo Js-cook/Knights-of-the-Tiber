@@ -1,18 +1,23 @@
-/* Container for flexbox */
-.flex-containter {
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  column-gap: 25px;
+/* Font */
+* {
+  font-family: 'Nunito', sans-serif;
 }
 
-/* Side navbar  */
-#sidebar {
-  margin: 2rem;
-  border: 2px solid #1a750e;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  width: 50%;
+/* Container for flexbox */
+.flex-containter {
+  padding: 1rem;
+}
+
+/* I love CSS :) */
+body {
+  margin: 0;
+}
+
+/* Top navbar  */
+#navbar {
+  margin: 0;
+  background-color: #1a750e;
+  padding: 1rem;
 }
 
 ul {
@@ -22,6 +27,13 @@ ul {
 }
 li a {
   display: block;
+  text-decoration: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #ffba0a;
+}
+li a:hover {
+  background-color: #114709;
 }
 
 /* Classes for toggling the side navbar  */
@@ -32,13 +44,24 @@ li a {
 .reveal {
   display: block;
 }
-/* ------------------------------------- */
 
+/* ------------------------------------- */
 /* Container for other content on page */
 .main-content {
+  display: inline;
   width: 50%;
   height: auto;
   margin-right: 1.5rem;
   margin-top: 2rem;
   align-content: center;
+}
+
+/* ------------------------------------- */
+/* Meeting Minutes Page */
+/* ------------------------------------- */
+
+/* Containers for minute */
+.minutes-block {
+  border: 1px solid grey;
+  border-radius: 5px;
 }
