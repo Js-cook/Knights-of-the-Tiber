@@ -28,14 +28,18 @@ ul {
 li a {
   display: block;
   text-decoration: none;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: #ffba0a;
 }
 li a:hover {
   background-color: #114709;
 }
-
+button {
+  background-color: #1a750e;
+  border: none;
+  cursor: pointer;
+}
 /* Classes for toggling the side navbar  */
 .hidden {
   display: none;
