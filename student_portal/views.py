@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Announcement, MeetingMinute
 # Create your views here.
-def dashboard(request):
-  return render(request, "student_portal/dashboard.html")
 
+def dashboard(request):
+  announcements = Announcement.objects.all()
+  return render(request, "student_portal/dashboard.html", {"announcements": announcements})
 # Prolly going to remove this page and add it to dashboard
 def announcements(request):
   return render(request, "student_portal/announcements.html")

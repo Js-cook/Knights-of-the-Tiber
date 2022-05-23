@@ -40,9 +40,30 @@
       </ul>
     </div>
   </div>
-  <div class="main-content">
+</div>
+<div class="main-content">
     <h1>title</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore dolores libero sunt ipsum temporibus odio unde fugiat, rem molestias dicta deserunt et, nesciunt, expedita reiciendis voluptas corrupti impedit illo necessitatibus?</p>
   </div>
+<hr>
+<div class="announcements-block">
+  <h2>Announcements</h2>
+  {% if not announcements %}
+  <p>Any announcements will show up here</p>
+  {% else %}
+  {% for announcement in announcements %}
+  <div class="announcement">
+    <div class="announcement-header">
+      <h4>{{announcement.title}}</h4>
+      <p>{{announcement.date}} - {{announcement.sender}}</p>
+    </div>
+    <div class="announcement-body">
+      <p>{{announcement.contents}}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  
 </div>
 {% endblock %}

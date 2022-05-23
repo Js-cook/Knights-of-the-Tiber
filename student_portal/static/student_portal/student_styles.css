@@ -28,8 +28,8 @@ ul {
 li a {
   display: block;
   text-decoration: none;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
+/*   padding-bottom: 1rem; */
   color: #ffba0a;
 }
 li a:hover {
@@ -52,12 +52,7 @@ button {
 /* ------------------------------------- */
 /* Container for other content on page */
 .main-content {
-  display: inline;
-  width: 50%;
-  height: auto;
-  margin-right: 1.5rem;
-  margin-top: 2rem;
-  align-content: center;
+  padding-left: 2rem;
 }
 
 /* ------------------------------------- */
