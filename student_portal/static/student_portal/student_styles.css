@@ -35,7 +35,7 @@ li a {
 li a:hover {
   background-color: #114709;
 }
-button {
+#menu-toggle {
   background-color: #1a750e;
   border: none;
   cursor: pointer;
@@ -63,4 +63,25 @@ button {
 .minutes-block {
   border: 1px solid grey;
   border-radius: 5px;
+}
+
+/* ------------------------------------- */
+/* Login */
+/* ------------------------------------- */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+/*   display: flex; */
+  
+}
+
+#top-banner {
+  border: 1px solid red;
+  text-align: center;
+  background-color: red;
 }

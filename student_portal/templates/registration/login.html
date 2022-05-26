@@ -1,0 +1,36 @@
+{% extends 'base_2.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% if form.errors %}
+<p>skill issue</p>
+{% endif %}
+<script>
+  function closeBanner() {
+    var banner = document.getElementById("top-banner")
+    banner.className = "hidden"
+  }
+</script>
+
+{% if next %}
+<div id="top-banner" class="reveal">
+  <h4>Please login to proceed</h4>
+  <button onclick="closeBanner()">Close</button>
+</div>
+{% endif %}
+
+<div class="login-container">
+  <form method="post" action="{% url 'login' %}" class="login-form">
+    {% csrf_token %}
+    
+    <h3>Username</h3>
+    <p>{{form.username}}</p>
+    <h3>Password</h3>
+    <p>{{form.password}}</p>
+  
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}"
+  </form>
+</div>
+{% endblock %}
