@@ -48,9 +48,9 @@
   {% for minute in minutes %}
   <div class="minute">
     <div class="date-header">
-      <p>{{minute.date}}</p>
+      <p>Meeting {{forloop.revcounter}}: {{minute.date}}</p>
     </div>
-    <h3>{{minute.contents}}</h3>
+    <h3 class="minute-contents">{{minute.contents}}</h3>
   </div>
   {% endfor %}
 </div>

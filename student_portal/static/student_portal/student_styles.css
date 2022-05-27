@@ -85,6 +85,12 @@ li a:hover {
 
 .date-header {
   border-bottom: 2.5px solid grey; 
+  padding-left: 1.5rem;
+}
+
+.minute-contents {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* ------------------------------------- */
