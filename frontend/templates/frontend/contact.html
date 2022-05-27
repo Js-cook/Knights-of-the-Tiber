@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="navbar">
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'constitution' %}">Constitution</a></li>
+    <li><a href="{% url 'student_portal:dashboard'%}">Student Portal</a></li>
+  </ul>
+</div>
+<div class="title">
+  <h1>Contact Us</h1>
+</div>
+<div class="text-block">
+  <h3>Club Moderators</h3>
+  <p><a href="#">Mr. Daniel Cavoli</a></p>
+  <p><a href="#">Mr. Peter Knittel</a></p>
+  <p><a href="#">Website admin</a></p>
+</div>
+{% endblock %}

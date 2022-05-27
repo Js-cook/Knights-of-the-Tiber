@@ -6,3 +6,6 @@ def index(request):
 
 def constitution(request):
   return render(request, "frontend/const.html")
+
+def contact(request):
+  return render(request, "frontend/contact.html")

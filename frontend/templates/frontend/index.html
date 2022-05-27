@@ -7,20 +7,47 @@
 <div class="navbar">
   <ul>
     <li><a href="{% url 'constitution' %}">Constitution</a></li>
-    <li><a href="#">Contact Us</a></li>
+    <li><a href="{% url 'contact' %}">Contact Us</a></li>
     <li><a href="{% url 'student_portal:dashboard' %}">Student Portal</a></li>
   </ul>
 </div>
 <div class="title">
-  <h1>Knights of the Tiber!</h1>
+  <h1 id="title-text">Knights of the Tiber</h1>
 </div>
+<script defer>
+  var titles = ["We are creative", "We are bold", "We are insightful", "We are the Knights of the Tiber"]
+  var iter = 0
+  function changeTitle(){
+    var title = document.getElementById("title-text")
+    title.innerHTML = titles[iter]
+    if (iter == 3){
+      iter = 0
+    }
+    iter += 1
+    setTimeout(changeTitle, 5000)
+  }
+  changeTitle()
+</script>
 <section class="about">
   <div id="side-text">
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iste ipsam veniam inventore aperiam perspiciatis repudiandae repellat alias officia corrupti, doloremque atque distinctio libero. Excepturi quidem vel ratione laudantium dolore.<p>
+    <h2>Who are We?</h2>
+    <p>We are the Knights of the Tiber, the Latin club at St. Ed's and the <i>only</i> Latin club in the state of Ohio with a name as cool as ours. All students enrolled in Latin are eligible to join the club and we meet every community period E.<p>
   </div>
   <div class="side-image">
     <img src="{% static 'frontend/bg.jpg' %}" id="image">
   </div>
 </section>
+<hr>
+<div class="paragraph-block">
+  <h2>What do you do?</h2>
+  <p>Contrary to popular belief, Latin is alive and well at St. Ed's. In addition to the fun and antics that take place during our meetings, we also travel to the state and sometimes even the national Latin convention! Knights compete in a variety of different academic contests ranging from tests, to Certamen (a Latin academic challenge), to Latin oratory and recitation.</p>
+  <br>
+  <h2>A Tradition of Excellence</h2>
+  <p>Our Knights have a history of successes on the state level and at the national level, here are a list of notable Knights and their many accomplishments</p>
+  <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>Will you be next on this list?</li>
+  </ul>
+</div>
 {% endblock %}
