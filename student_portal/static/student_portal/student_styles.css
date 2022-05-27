@@ -49,6 +49,23 @@ li a:hover {
   display: block;
 }
 
+/* Container for announcements */
+.announcements-block {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Styles for announcement block */
+.announcement {
+  border: 2.5px solid grey;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+.announcement-header {
+  border-bottom: 2.5px solid;
+}
+
 /* ------------------------------------- */
 /* Container for other content on page */
 .main-content {

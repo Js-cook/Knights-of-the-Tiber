@@ -9,6 +9,9 @@ class Announcement(models.Model):
   contents = models.CharField(max_length=2000)
   sender = models.ForeignKey(User, on_delete=models.CASCADE)
 
+  class Meta:
+    ordering = ["-date"]
+
 class MeetingMinute(models.Model):
   date = models.DateField(default=timezone.now)
   contents = models.CharField(max_length=3000)
