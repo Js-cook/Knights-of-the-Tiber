@@ -15,4 +15,7 @@ class Announcement(models.Model):
 class MeetingMinute(models.Model):
   date = models.DateField(default=timezone.now)
   contents = models.CharField(max_length=3000)
+
+  class Meta:
+    ordering = ["-date"]
   

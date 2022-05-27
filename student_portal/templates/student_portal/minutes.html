@@ -3,8 +3,46 @@
 {% block title %}Minutes{% endblock %}
 
 {% block content %}
-<div class="header">
-  
+<script>
+  function expandNav(){
+    var sidebar = document.getElementById("list")
+    var button = document.getElementById("menu-toggle")
+    if (sidebar.className == "hidden"){
+      sidebar.className = "reveal"
+      button.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+        </svg>
+        `
+    }
+    else {
+      sidebar.className = "hidden"
+      button.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+      `
+    }
+  }
+</script>
+<div class="flex-container">
+  <div id="navbar">
+    <div id="sidebar">
+      <button onclick="expandNav()" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </button>
+      <ul id="list" class="hidden">
+        <li><a href="{% url 'student_portal:minutes' %}">Meeting Minutes</a></li>
+        <li><a href="{% url 'student_portal:cursus_honorum' %}">Cursus Honorum</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="main-content">
+  <h1>Meeting Minutes</h1>
+  <p>Information regarding the previous meetings and their contents will be displayed below.</p>
 </div>
 <div class="minutes-block">
   {% for minute in minutes %}

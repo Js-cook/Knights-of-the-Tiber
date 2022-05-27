@@ -63,7 +63,7 @@ li a:hover {
 }
 
 .announcement-header {
-  border-bottom: 2.5px solid;
+  border-bottom: 2.5px solid grey;
 }
 
 /* ------------------------------------- */
@@ -76,10 +76,15 @@ li a:hover {
 /* Meeting Minutes Page */
 /* ------------------------------------- */
 
-/* Containers for minute */
-.minutes-block {
-  border: 1px solid grey;
+/* Minute block */
+.minute {
+  border: 2.5px solid grey;
   border-radius: 5px;
+  margin: 1.5rem;
+}
+
+.date-header {
+  border-bottom: 2.5px solid grey; 
 }
 
 /* ------------------------------------- */
