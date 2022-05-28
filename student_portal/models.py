@@ -26,9 +26,9 @@ class UserExtension(models.Model):
 
   class Meta:
     permissions = [
-      ("add announcement", "User can add or clear announcements"),
-      ("add meeting minute", "User can add meeting minute"),
-      ("edit cursus", "User can edit the Cursus Honorum")
+      ("add_announcement", "User can add or clear announcements"),
+      ("add_meeting minute", "User can add meeting minute"),
+      ("edit_cursus", "User can edit the Cursus Honorum")
     ]
 
 @receiver(post_save, sender=User)

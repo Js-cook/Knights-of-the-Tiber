@@ -47,6 +47,11 @@
 <hr>
 <div class="announcements-block">
   <h2>Announcements</h2>
+  {% if perms.student_portal.add_announcement %}
+  <h4>
+    <a id="link-btn" href="{% url 'student_portal:new_announcement' %}">Add annoucement</a>
+  </h4>
+  {% endif %}
   {% if not announcements %}
   <p>Any announcements will show up here</p>
   {% else %}

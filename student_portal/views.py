@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Announcement, MeetingMinute
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 import datetime
 # Create your views here.
 
@@ -19,6 +19,7 @@ def cursus(request):
   return render(request, "student_portal/cursus.html")
 
 # name
+@permission_required("student_portal.add_announcement")
 def create_announcement(request):
   if request.method == "POST":
     title = request.POST["title"]
