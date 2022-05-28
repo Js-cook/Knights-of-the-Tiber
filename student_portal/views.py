@@ -40,5 +40,5 @@ def create_minute(request):
       date = datetime.datetime.now().strftime("%Y-%m-%d")
       new_minute = MeetingMinute(date=date, contents=contents)
       new_minute.save()
-      return redirect("/student_portal/meeting-minutes/")
+      return redirect("/student_portal/meeting-minutes")
   return render(request, "student_portal/create_minute.html")

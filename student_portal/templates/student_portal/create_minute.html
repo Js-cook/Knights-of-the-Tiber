@@ -45,6 +45,7 @@
     <p>Use the form below to add a new meeting minute. Note, this form does not automatically save, if this page is closed before submitting, any progress will not be saved.</p>
 </div>
 <form method="post" class="creation-container">
+    {% csrf_token %}
     <label for="contents">Contents</label>
     <br>
     <textarea id="contents" name="contents" rows="4" cols="50" required></textarea>
