@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Announcement, MeetingMinute
 from django.contrib.auth.decorators import login_required
+import datetime
 # Create your views here.
 
 @login_required
@@ -16,3 +17,16 @@ def minutes(request):
 @login_required
 def cursus(request):
   return render(request, "student_portal/cursus.html")
+
+# name
+def create_announcement(request):
+  if request.method == "POST":
+    title = request.POST["title"]
+    contents = request.POST["contents"]
+    if title and contents:
+      sender = request.user
+      date = datetime.datetime.now().strftime("%Y-%m-%d")
+      new_announcement = Announcement(title=title, contents=contents, sender=sender, date=date)
+      new_announcement.save()
+      return redirect("/student_portal/dashboard/")
+  return render(request, "student_portal/create_announce.html")

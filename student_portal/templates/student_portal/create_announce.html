@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="title">Announcement Title</label>
+    <input type="text" name="title" id="title" required>
+    <label for="contents">Contents</label>
+    <input type="text" name="contents" id="contents" required>
+
+    <input type="submit" value="Create">
+</form>
