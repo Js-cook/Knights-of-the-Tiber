@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 # Create your models here.
 class Announcement(models.Model):
@@ -19,3 +21,17 @@ class MeetingMinute(models.Model):
   class Meta:
     ordering = ["-date"]
   
+class UserExtension(models.Model):
+  user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+  class Meta:
+    permissions = [
+      ("add announcement", "User can add or clear announcements"),
+      ("add meeting minute", "User can add meeting minute"),
+      ("edit cursus", "User can edit the Cursus Honorum")
+    ]
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+  if created:
+    UserExtension.objects.create(user=instance)
