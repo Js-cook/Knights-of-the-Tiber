@@ -29,5 +29,5 @@ def create_announcement(request):
       date = datetime.datetime.now().strftime("%Y-%m-%d")
       new_announcement = Announcement(title=title, contents=contents, sender=sender, date=date)
       new_announcement.save()
-      return redirect("/student_portal/dashboard/")
+      return redirect("/student_portal/")
   return render(request, "student_portal/create_announce.html")

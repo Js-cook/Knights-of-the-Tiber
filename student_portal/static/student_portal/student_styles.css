@@ -50,13 +50,22 @@ li a:hover {
 }
 
 /* link button styles */
-/* Styles not applying NEED TO FIX */
 #link-btn {
   text-decoration: none;
   border: 2px solid #1a750e;
   border-radius: 5px;
   background-color: #1a750e;
   color: white;
+  padding: 0.5rem;
+}
+
+#link-btn:hover {
+  text-decoration: none;
+  border: 2px solid #114709;
+  border-radius: 5px;
+  background-color: #114709;
+  color: white;
+  padding: 0.5rem;
 }
 
 /* Container for announcements */
@@ -130,4 +139,28 @@ li a:hover {
   border: 1px solid red;
   text-align: center;
   background-color: red;
+}
+
+/* ------------------------------------- */
+/* New Announcement Form */
+/* ------------------------------------- */
+
+.creation-container {
+  padding: 2rem;
+}
+
+#submit-btn {
+  border: 2px solid #1a750e;
+  border-radius: 5px;
+  background-color: #1a750e;
+  color: white;
+  padding: 0.5rem;
+}
+
+#submit-btn:hover {
+  border: 2px solid #114709;
+  border-radius: 5px;
+  background-color: #114709;
+  color: white;
+  padding: 0.5rem;
 }
