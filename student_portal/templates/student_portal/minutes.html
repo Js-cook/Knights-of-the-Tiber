@@ -43,6 +43,11 @@
 <div class="main-content">
   <h1>Meeting Minutes</h1>
   <p>Information regarding the previous meetings and their contents will be displayed below.</p>
+  {% if 'perms.student_portal.add_meeting minute' %}
+  <h4>
+    <a id="link-btn" href="{% url 'student_portal:new_minute' %}">Add Meeting Minute</a>
+  </h4> 
+  {% endif %}
 </div>
 <div class="minutes-block">
   {% for minute in minutes %}

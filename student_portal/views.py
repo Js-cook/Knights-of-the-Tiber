@@ -31,3 +31,14 @@ def create_announcement(request):
       new_announcement.save()
       return redirect("/student_portal/")
   return render(request, "student_portal/create_announce.html")
+
+@permission_required("student_portal.add_meeting minute")
+def create_minute(request):
+  if request.method == "POST":
+    contents = request.POST["contents"]
+    if contents:
+      date = datetime.datetime.now().strftime("%Y-%m-%d")
+      new_minute = MeetingMinute(date=date, contents=contents)
+      new_minute.save()
+      return redirect("/student_portal/meeting-minutes/")
+  return render(request, "student_portal/create_minute.html")
