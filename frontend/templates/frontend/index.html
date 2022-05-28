@@ -19,7 +19,9 @@
   var iter = 0
   function changeTitle(){
     var title = document.getElementById("title-text")
+    title.className = "fade-out"
     title.innerHTML = titles[iter]
+    // title.className = "fade-in"
     if (iter == 3){
       iter = 0
     }
