@@ -21,24 +21,24 @@ h1 {
   text-align: center;
 }
 
-ul {
+#list {
   list-style-type: none;
   overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
-li {
+.list-item {
   float: right;
 }
-li a {
+.list-item a {
   display: block;
   padding: 1rem;
   color: #ffba0a;
   text-decoration: none;
   border-right: 1px solid #114709;
 }
-li a:hover {
+.list-item a:hover {
   background-color: #114709;
 }
 
@@ -54,11 +54,16 @@ li a:hover {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 50%;
+  height: 25rem;
 }
 
 .side-image {
+  background-image: url(/static/frontend/bg.jpg);
+  background-size: cover;
+  overflow: hidden;
   width: 50%;
-  height: auto;
+  height: 25rem;
+  /* height: auto; */
   margin-right: 1.5rem;
   margin-top: 2rem;
   align-content: center;

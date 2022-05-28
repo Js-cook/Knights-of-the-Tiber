@@ -5,10 +5,10 @@
 
 {% block content %}
 <div class="navbar">
-  <ul>
-    <li><a href="{% url 'constitution' %}">Constitution</a></li>
-    <li><a href="{% url 'contact' %}">Contact Us</a></li>
-    <li><a href="{% url 'student_portal:dashboard' %}">Student Portal</a></li>
+  <ul id="list">
+    <li class="list-item"><a href="{% url 'constitution' %}">Constitution</a></li>
+    <li class="list-item"><a href="{% url 'contact' %}">Contact Us</a></li>
+    <li class="list-item"><a href="{% url 'student_portal:dashboard' %}">Student Portal</a></li>
   </ul>
 </div>
 <div class="title">
@@ -34,10 +34,10 @@
 <section class="about">
   <div id="side-text">
     <h2>Who are We?</h2>
-    <p>We are the Knights of the Tiber, the Latin club at St. Ed's and the <i>only</i> Latin club in the state of Ohio with a name as cool as ours. All students enrolled in Latin are eligible to join the club and we meet every community period E.<p>
+    <p>We are the Knights of the Tiber, the Latin club at St. Ed's and the <i>only</i> Latin club in the state of Ohio with a name as cool as ours. All students enrolled in Latin are eligible to join the club and we meet every community period E.</p>
   </div>
   <div class="side-image">
-    <img src="{% static 'frontend/bg.jpg' %}" id="image">
+    <!-- <img src="{% static 'frontend/bg.jpg' %}" id="image"> -->
   </div>
 </section>
 <hr>
@@ -47,10 +47,6 @@
   <br>
   <h2>A Tradition of Excellence</h2>
   <p>Our Knights have a history of successes on the state level and at the national level, here are a list of notable Knights and their many accomplishments</p>
-  <ul>
-    <li>item 1</li>
-    <li>item 2</li>
-    <li>Will you be next on this list?</li>
-  </ul>
+  
 </div>
 {% endblock %}
