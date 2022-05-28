@@ -21,11 +21,12 @@
     var title = document.getElementById("title-text")
     title.className = "fade-out"
     title.innerHTML = titles[iter]
-    // title.className = "fade-in"
+    // title.className = "normal"
     if (iter == 3){
       iter = 0
     }
     iter += 1
+    // title.className = "normal"
     setTimeout(changeTitle, 5000)
   }
   changeTitle()

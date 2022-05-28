@@ -81,16 +81,14 @@ li a:hover {
   padding-right: 1.5rem;
 }
 
-.fade-out {
+.normal {
   color: white;
-  animation: fade 2.5s;
-  /* animation-direction: reverse; */
 }
 
-/* .fade-in {
-  color: blue;
-  animation: fade 2.5s;
-} */
+.fade-out {
+  color: white;
+  animation: fade 4.1s infinite;
+}
 
 @keyframes fade {
   0% {
