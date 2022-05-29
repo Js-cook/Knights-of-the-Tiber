@@ -123,10 +123,12 @@ li a:hover {
 /* Login */
 /* ------------------------------------- */
 
-.login-container {
+#login-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin: auto; */
+  /* width: 50%; */
   border: 2.5px solid grey;
   border-radius: 5px;
 }

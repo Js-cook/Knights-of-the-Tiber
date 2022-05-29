@@ -4,7 +4,10 @@
 
 {% block content %}
 {% if form.errors %}
-<p>skill issue</p>
+<div id="top-banner" class="reveal">
+  <h4>An issue occurred while trying to login, check that the entered credentials are correct.</h4>
+  <button onclick="closeBanner()">Close</button>
+</div>
 {% endif %}
 <script>
   function closeBanner() {
@@ -20,7 +23,7 @@
 </div>
 {% endif %}
 
-<div class="login-container">
+<div id="login-container">
   <form method="post" action="{% url 'login' %}" class="login-form">
     {% csrf_token %}
     
@@ -29,8 +32,8 @@
     <h3>Password</h3>
     <p>{{form.password}}</p>
   
-    <input type="submit" value="login">
-    <input type="hidden" name="next" value="{{ next }}"
+    <input type="submit" value="login" id="submit-btn">
+    <input type="hidden" name="next" value="{{ next }}">
   </form>
 </div>
 {% endblock %}
