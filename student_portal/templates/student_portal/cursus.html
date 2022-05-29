@@ -45,9 +45,25 @@
    <p>Below you will find the names of all members holding a position in the Cursus Honorm.</p> 
 </div>
 <hr>
-<div>
+<div style="text-align: center;">
    <h2>Consuls</h2>
-   <h4>Person</h4>
-   <h4>Person2</h4> 
+   {% for consul in consuls %}
+   <h4>{{consul.user.username}}</h4>
+   {% endfor %} 
+   <br>
+   <h2>Praetors</h2>
+   {% for praetor in praetors %}
+   <h4>{{praetor.user.username}</h4>
+   {% endfor %}
+   <br>
+   <h2>Quaestors</h2>
+   {% for quaestor in quaestors %}
+   <h4>{{quaestor.user.username}</h4>
+   {% endfor %}
+   <br>
+   <h2>Aediles</h2>
+   {% for aedile in aediles %}
+   <h4>{{aedile.user.username}</h4>
+   {% endfor %}
 </div>
 {% endblock %}

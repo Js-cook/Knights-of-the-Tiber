@@ -17,7 +17,11 @@ def minutes(request):
 
 @login_required
 def cursus(request):
-  return render(request, "student_portal/cursus.html")
+  consuls = Consul.objects.all()
+  praetors = Praetor.objects.all()
+  quaestors = Quaestor.objects.all()
+  aediles = Aedile.objects.all() 
+  return render(request, "student_portal/cursus.html", {"consuls": consuls, "praetors": praetors, "quaestors": quaestors, "aediles": aediles})
 
 # name
 @permission_required("student_portal.add_announcement")
