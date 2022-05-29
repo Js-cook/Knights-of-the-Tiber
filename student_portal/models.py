@@ -31,6 +31,30 @@ class UserExtension(models.Model):
       ("edit_cursus", "User can edit the Cursus Honorum")
     ]
 
+class Consul(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return(self.user)
+
+class Praetor(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return(self.user)
+
+class Quaestor(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return(self.user)
+
+class Aedile(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return(self.user)
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
   if created:
