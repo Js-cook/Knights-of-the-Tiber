@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Announcement, MeetingMinute
+from .models import Announcement, MeetingMinute, Consul, Praetor, Quaestor, Aedile
 from django.contrib.auth.decorators import login_required, permission_required
 import datetime
+from django.contrib.auth.models import User
 # Create your views here.
 
 @login_required
@@ -42,3 +43,28 @@ def create_minute(request):
       new_minute.save()
       return redirect("/student_portal/meeting-minutes")
   return render(request, "student_portal/create_minute.html")
+
+def change_role(request):
+  if request.method == "POST":
+    student = request.POST["student"]
+    position = request.POST["position"]
+    if student and position:
+      if position == "consul":
+        user = User.objects.get(username=student)
+        new_consul = Consul(user=user)
+        new_consul.save()
+      elif position == "praetor":
+        user = User.objects.get(username=student)
+        new_praetor = Praetor(user=user)
+        new_praetor.save()
+      elif position == "quaestor":
+        user = User.objects.get(username=student)
+        new_quaestor = Quaestor(user=user)
+        new_quaestor.save()
+      else:
+        user = User.objects.get(username=student)
+        new_aedile = Aedile(user=user)
+        new_aedile.save()
+      return redirect("/student_portal/cursus-honorum")        
+  users = User.objects.all()
+  return render(request, "student_portal/change_role.html", {"users": users})

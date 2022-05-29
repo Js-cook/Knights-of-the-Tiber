@@ -35,25 +35,25 @@ class Consul(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
-    return(self.user)
+    return(f"{self.user}")
 
 class Praetor(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
-    return(self.user)
+    return(f"{self.user}")
 
 class Quaestor(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
-    return(self.user)
+    return(f"{self.user}")
 
 class Aedile(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
-    return(self.user)
+    return(f"{self.user}")
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

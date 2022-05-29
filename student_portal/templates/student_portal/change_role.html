@@ -1,0 +1,18 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="student">Student</label>
+    <select name="student" id="student">
+        {% for user in users %}
+        <option value="{{user.username}}">{{user.username}}</option>
+        {% endfor %}
+    </select>
+    <label for="position">Position</label>
+    <select name="position" id="position">
+        <option value="consul">Consul</option>
+        <option value="praetor">Praetor</option>
+        <option value="quaestor">Quaestor</option>
+        <option value="aedile">Aedile</option>
+    </select>
+    <br>
+    <input type="submit" value="Promote">
+</form>
