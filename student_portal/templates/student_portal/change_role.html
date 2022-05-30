@@ -1,18 +1,76 @@
-<form method="post">
+{% extends 'base_2.html' %}
+
+{% block title %}Edit Cursus Honorum{% endblock %}
+
+{% block content %}
+<script>
+    function expandNav(){
+      var sidebar = document.getElementById("list")
+      var button = document.getElementById("menu-toggle")
+      if (sidebar.className == "hidden"){
+        sidebar.className = "reveal"
+        button.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+          </svg>
+          `
+      }
+      else {
+        sidebar.className = "hidden"
+        button.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+        `
+      }
+    }
+  </script>
+<div class="flex-container">
+    <div id="navbar">
+      <div id="sidebar">
+        <button onclick="expandNav()" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </button>
+        <ul id="list" class="hidden">
+          <li><a href="{% url 'student_portal:dashboard' %}">Portal Homepage</a></li>
+          <li><a href="{% url 'student_portal:minutes' %}">Meeting Minutes</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+<div class="main-content">
+    <h1>Edit the Cursus Honorum</h1>
+    <p>Use the dropdown menus below to add a role to an account listed.</p>
+</div>
+<hr>
+<form method="post" class="creation-container">
     {% csrf_token %}
-    <label for="student">Student</label>
-    <select name="student" id="student">
-        {% for user in users %}
-        <option value="{{user.username}}">{{user.username}}</option>
-        {% endfor %}
-    </select>
-    <label for="position">Position</label>
-    <select name="position" id="position">
-        <option value="consul">Consul</option>
-        <option value="praetor">Praetor</option>
-        <option value="quaestor">Quaestor</option>
-        <option value="aedile">Aedile</option>
-    </select>
-    <br>
-    <input type="submit" value="Promote">
+    <div class="select">
+        <label for="student">Student</label>
+        <br>
+        <select name="student" id="student">
+            {% for user in users %}
+            <option value="{{user.username}}">{{user.username}}</option>
+            {% endfor %}
+        </select>
+        <br>
+    </div>
+    <div class="select">
+        <label for="position">Position</label>
+        <br>
+        <select name="position" id="position">
+            <option value="consul">Consul</option>
+            <option value="praetor">Praetor</option>
+            <option value="quaestor">Quaestor</option>
+            <option value="aedile">Aedile</option>
+        </select>
+        <br>
+    </div>
+    <div class="select">
+        <input type="submit" value="Promote" id="submit-btn">
+    </div>
 </form>
+
+{% endblock %}

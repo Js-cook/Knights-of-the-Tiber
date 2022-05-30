@@ -42,7 +42,12 @@
 </div>
 <div class="main-content">
    <h1>Cursus Honorum</h1>
-   <p>Below you will find the names of all members holding a position in the Cursus Honorm.</p> 
+   <p>Below you will find the names of all members holding a position in the Cursus Honorm.</p>
+   {% if 'perms.student_portal.edit_cursus' %}
+   <h4>
+       <a id="link-btn" href="{% url 'student_portal:change_role' %}">Add student</a>
+   </h4>
+   {% endif %} 
 </div>
 <hr>
 <div style="text-align: center;">
