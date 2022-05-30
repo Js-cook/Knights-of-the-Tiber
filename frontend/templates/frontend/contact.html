@@ -16,8 +16,29 @@
 </div>
 <div class="text-block">
   <h3>Club Moderators</h3>
-  <p><a href="#">Mr. Daniel Cavoli</a></p>
-  <p><a href="#">Mr. Peter Knittel</a></p>
-  <p><a href="#">Website admin</a></p>
+  <p><a href="mailto:djcavoli@sehs.net">Mr. Daniel Cavoli</a></p>
+  <p><a href="mailto:pknittel@sehs.net">Mr. Peter Knittel</a></p>
+  <p><a href="mailto:cookjaco@sehs.net">Website admin</a></p>
+  <hr>
+  <h3>Cursus Honorum (Club leadership)</h3>
+  <h4>In the positions of consul:</h4>
+  {% for consul in consuls %}
+  <p><a href="{{consul.user.email}}">{{consul.user.first_name}} {{consul.user.last_name}}</a></p>
+  {% endfor %}
+  <h4>In the positions of praetor:</h4>
+  {% for praetor in praetors %}
+  <p><a href="{{praetor.user.email}}">{{praetor.user.first_name}} {{praetor.user.last_name}}</a></p>
+  {% endfor %}
+  <h4>In the positions of quaestor:</h4>
+  {% for quaestor in quaestors %}
+  <p><a href="{{quaestor.user.email}}">{{quaestor.user.first_name}} {{quaestor.user.last_name}}</a></p>
+  {% endfor %}
+  <h4>In the position of aedile:</h4>
+  {% for aedile in aediles %}
+  <p><a href="{{aedile.user.email}}">{{aedile.user.first_name}} {{aedile.user.last_name}}</a></p>
+  {% endfor %}
+</div>
+<div>
+
 </div>
 {% endblock %}

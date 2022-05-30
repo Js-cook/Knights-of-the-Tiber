@@ -48,6 +48,7 @@ def create_minute(request):
       return redirect("/student_portal/meeting-minutes")
   return render(request, "student_portal/create_minute.html")
 
+@permission_required("student_portal.edit_cursus")
 def change_role(request):
   if request.method == "POST":
     student = request.POST["student"]
