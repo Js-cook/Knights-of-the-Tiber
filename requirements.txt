@@ -22,4 +22,5 @@ six==1.12.0
 sqlparse==0.4.2
 twitchio==2.1.2
 typing-extensions==4.0.0
+whitenoise==6.1.0
 yarl==1.7.2
