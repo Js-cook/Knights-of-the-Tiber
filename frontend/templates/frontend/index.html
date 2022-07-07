@@ -28,6 +28,31 @@
   <div id="side-text">
     <h2>Who are We?</h2>
     <p>We are the Knights of the Tiber, the Latin club at St. Ed's and the <i>only</i> Latin club in the state of Ohio with a name as cool as ours. All students enrolled in Latin are eligible to join the club and we meet every community period E.</p>
+    <h2>Club Officers</h2>
+    <h4>Consuls</h4>
+    <ul>
+    {% for consul in consuls %}
+      <li>{{consul.user.first_name}} {{consul.user.last_name}}</li>
+    {% endfor %}
+    </ul>
+    <h4>Praetors</h4>
+    <ul>
+    {% for praetor in praetors %}
+      <li>{{praetor.user.first_name}} {{praetor.user.last_name}}</li>
+    {% endfor %}
+    </ul>
+    <h4>Quaestors</h4>
+    <ul>
+    {% for quaestor in quaestors%}
+      <li>{{quaestor.user.first_name}} {{quaestor.user.last_name}}</li>
+    {% endfor %}
+    </ul>
+    <h4>Aediles</h4>
+    <ul>
+    {% for aedile in aediles %}
+      <li>{{aedile.user.first_name}} {{aedile.user.last_name}}</li>  
+    {% endfor %}
+    </ul>
   </div>
   <div class="side-image">
     <!-- <img src="{% static 'frontend/bg.jpg' %}" id="image"> -->
