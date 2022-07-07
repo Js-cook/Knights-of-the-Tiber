@@ -10,8 +10,43 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
+    <div class="navbar">
+      <button onclick="expandNav()" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </button>
+      <ul id="list" class="hidden">
+        <li class="list-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="list-item"><a href="{% url 'constitution' %}">Constitution</a></li>
+        <li class="list-item"><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li class="list-item"><a href="{% url 'student_portal:dashboard' %}">Student Portal</a></li>
+      </ul>
+    </div>
     {% block content %}
 
     {% endblock %}
+    <script type="text/javascript">
+      function expandNav(){
+      var sidebar = document.getElementById("list")
+      var button = document.getElementById("menu-toggle")
+      if (sidebar.className == "hidden"){
+        sidebar.className = "reveal"
+        button.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+          </svg>
+          `
+      }
+      else {
+        sidebar.className = "hidden"
+        button.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffba0a" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+        `
+      }
+    }
+    </script>
   </body>
 </html>

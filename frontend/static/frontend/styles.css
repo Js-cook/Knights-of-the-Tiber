@@ -12,6 +12,8 @@ h1 {
 .navbar {
   background-color: #1a750e;
   border-bottom: 1px solid black;
+  margin: 0;
+  padding: 1rem;
 }
 
 .title {
@@ -21,7 +23,7 @@ h1 {
   text-align: center;
 }
 
-#list {
+/* #list {
   list-style-type: none;
   overflow: hidden;
   margin: 0;
@@ -40,6 +42,54 @@ h1 {
 }
 .list-item a:hover {
   background-color: #114709;
+} */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+/*   padding-bottom: 1rem; */
+  color: #ffba0a;
+}
+li a:hover {
+  background-color: #114709;
+}
+#menu-toggle {
+  background-color: #1a750e;
+  border: none;
+  cursor: pointer;
+}
+/* Classes for toggling the side navbar  */
+.hidden {
+  display: none;
+}
+
+.reveal {
+  display: block;
+}
+
+/* link button styles */
+#link-btn {
+  text-decoration: none;
+  border: 2px solid #1a750e;
+  border-radius: 5px;
+  background-color: #1a750e;
+  color: white;
+  padding: 0.5rem;
+}
+
+#link-btn:hover {
+  text-decoration: none;
+  border: 2px solid #114709;
+  border-radius: 5px;
+  background-color: #114709;
+  color: white;
+  padding: 0.5rem;
 }
 
 .about {
