@@ -119,6 +119,18 @@ li a:hover {
   align-content: center;
 }
 
+.side-image-alt {
+  background-image: url(/static/frontend/bottom-img.svg);
+  background-size: cover;
+  overflow: hidden;
+  width: 50%;
+  height: 25rem;
+  margin-right: 1.5rem;
+  margin-top: 2rem;
+  align-content: center;
+  border: 1px solid grey;
+}
+
 #image {
   width: 100%;
   height: 100%;
