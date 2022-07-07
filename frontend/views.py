@@ -19,3 +19,5 @@ def contact(request):
   aediles = Aedile.objects.all()
   return render(request, "frontend/contact.html", {"consuls": consuls, "praetors": praetors, "quaestors": quaestors, "aediles": aediles})
 
+def news(request):
+  return render(request, "frontend/news.html")
