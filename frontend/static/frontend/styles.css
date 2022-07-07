@@ -17,10 +17,11 @@ h1 {
 }
 
 .title {
-  background-image: url(/static/frontend/bg.jpg);
+  background-image: url(/static/frontend/kot-bg.jpg);
   background-size: cover;
   padding: 125px;
   text-align: center;
+  background-position: center;
 }
 
 /* #list {
