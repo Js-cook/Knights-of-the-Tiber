@@ -21,3 +21,6 @@ def contact(request):
 
 def news(request):
   return render(request, "frontend/news.html")
+
+def club_news(request):
+  return render(request, "frontend/cnews.html")
