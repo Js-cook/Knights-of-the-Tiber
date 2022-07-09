@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from student_portal.models import Consul, Praetor, Quaestor, Aedile
+import random
 
 # Create your views here.
 def index(request):
@@ -7,7 +8,8 @@ def index(request):
   praetors = Praetor.objects.all()
   quaestors = Quaestor.objects.all()
   aediles = Aedile.objects.all()
-  return render(request, "frontend/index.html", {"consuls": consuls, "praetors": praetors, "quaestors": quaestors, "aediles": aediles})
+  quote = random.choice(list(open("frontend/static/quotes.txt")))
+  return render(request, "frontend/index.html", {"consuls": consuls, "praetors": praetors, "quaestors": quaestors, "aediles": aediles, "quote": quote})
 
 def constitution(request):
   return render(request, "frontend/const.html")

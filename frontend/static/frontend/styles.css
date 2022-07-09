@@ -17,6 +17,17 @@ h1 {
   padding: 1rem;
 }
 
+#fixed-bottom {
+  border: 2px solid #1a750e;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
 .title {
   background-image: url(/static/frontend/kot-bg.jpg);
   background-size: cover;

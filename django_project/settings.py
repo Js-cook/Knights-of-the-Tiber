@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'frontend',
-    'student_portal'
+    'student_portal',
 ]
+
+# CRONJOBS = [
+#     ("*/1 * * * *", "frontend.cron.fetch_quote")
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
