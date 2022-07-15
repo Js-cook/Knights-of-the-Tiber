@@ -5,8 +5,8 @@
 {% block content %}
 {% if form.errors %}
 <div id="top-banner" class="reveal">
-  <h4>An issue occurred while trying to login, check that the entered credentials are correct.</h4>
-  <button onclick="closeBanner()">Close</button>
+  <button class="submit-btn" id="close-btn" onclick="closeBanner()">Close</button>
+  <h2 id="banner-txt">An issue occurred while trying to login, check that the entered credentials are correct.</h2>
 </div>
 {% endif %}
 <script>
@@ -18,22 +18,24 @@
 
 {% if next %}
 <div id="top-banner" class="reveal">
-  <h4>Please login to proceed</h4>
-  <button onclick="closeBanner()">Close</button>
+  <button onclick="closeBanner()" class="submit-btn" id="close-btn">Close</button>
+  <h2 id="banner-txt">Please login to proceed</h2>
 </div>
 {% endif %}
 
 <div id="login-container">
-  <form method="post" action="{% url 'login' %}" class="login-form">
-    {% csrf_token %}
+  <div id="login-border">
+    <form method="post" action="{% url 'login' %}" class="login-form">
+      {% csrf_token %}
+      
+      <h3>Username</h3>
+      <p>{{form.username}}</p>
+      <h3>Password</h3>
+      <p>{{form.password}}</p>
     
-    <h3>Username</h3>
-    <p>{{form.username}}</p>
-    <h3>Password</h3>
-    <p>{{form.password}}</p>
-  
-    <input type="submit" value="login" id="submit-btn">
-    <input type="hidden" name="next" value="{{ next }}">
-  </form>
+      <input type="submit" value="login" class="submit-btn">
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+  </div>
 </div>
 {% endblock %}

@@ -127,20 +127,34 @@ li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: auto; */
-  /* width: 50%; */
-  border: 2.5px solid grey;
-  border-radius: 5px;
 }
 
-/* .login-form {
-  
-} */
+#banner-txt {
+  display: inline-block;
+  text-align: center;
+}
+
+#close-btn {
+  display: inline-block;
+  margin-left: 1.25rem;
+  margin-right: 2.5rem;
+}
+
+#login-border {
+  border: 2.5px solid grey;
+  border-radius: 5px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
 
 #top-banner {
-  border: 1px solid red;
-  text-align: center;
-  background-color: red;
+  border: 1px solid rgba(26, 117, 14, 0.5);
+  background-color: rgba(26, 117, 14, 0.5);
+}
+
+#left {
+  float: left;
 }
 
 /* ------------------------------------- */
@@ -151,15 +165,16 @@ li a:hover {
   padding: 2rem;
 }
 
-#submit-btn {
+.submit-btn {
   border: 2px solid #1a750e;
   border-radius: 5px;
   background-color: #1a750e;
   color: white;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
-#submit-btn:hover {
+.submit-btn:hover {
   border: 2px solid #114709;
   border-radius: 5px;
   background-color: #114709;
