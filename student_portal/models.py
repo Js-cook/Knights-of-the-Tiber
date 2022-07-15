@@ -8,7 +8,7 @@ from django.db.models.signals import post_save
 class Announcement(models.Model):
   title = models.CharField(max_length=200)
   date = models.DateField(default=timezone.now)
-  contents = models.CharField(max_length=2000)
+  contents = models.TextField(max_length=2000)
   sender = models.ForeignKey(User, on_delete=models.CASCADE)
 
   class Meta:
@@ -16,7 +16,7 @@ class Announcement(models.Model):
 
 class MeetingMinute(models.Model):
   date = models.DateField(default=timezone.now)
-  contents = models.CharField(max_length=3000)
+  contents = models.TextField(max_length=3000)
 
   class Meta:
     ordering = ["-date"]
