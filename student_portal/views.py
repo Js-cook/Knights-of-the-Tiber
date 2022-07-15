@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Announcement, MeetingMinute, Consul, Praetor, Quaestor, Aedile
 from django.contrib.auth.decorators import login_required, permission_required
 import datetime
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -47,6 +48,10 @@ def create_minute(request):
       new_minute.save()
       return redirect("/student_portal/meeting-minutes")
   return render(request, "student_portal/create_minute.html")
+
+def logout_request(request):
+  logout(request)
+  return redirect("index")
 
 @permission_required("student_portal.edit_cursus")
 def change_role(request):

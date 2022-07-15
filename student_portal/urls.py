@@ -10,5 +10,6 @@ urlpatterns = [
     path("meeting-minutes", views.minutes, name="minutes"),
     path("new-announcement", views.create_announcement, name="new_announcement"),
     path("new-meeting-minute", views.create_minute, name="new_minute"),
-    path("change-role", views.change_role, name="change_role")
+    path("change-role", views.change_role, name="change_role"),
+    path("logout/", views.logout_request, name="logout")
 ]
