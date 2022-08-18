@@ -10,12 +10,12 @@ h1 {
   color: white;
 }
 
-.navbar {
+/* .navbar {
   background-color: #1a750e;
   border-bottom: 1px solid black;
   margin: 0;
   padding: 1rem;
-}
+} */
 
 #fixed-bottom {
   border: 2px solid #1a750e;
@@ -72,11 +72,11 @@ li a {
 li a:hover {
   background-color: #114709;
 }
-#menu-toggle {
+/* #menu-toggle {
   background-color: #1a750e;
   border: none;
   cursor: pointer;
-}
+} */
 /* Classes for toggling the side navbar  */
 .hidden {
   display: none;
@@ -105,13 +105,13 @@ li a:hover {
   padding: 0.5rem;
 }
 
-.about {
+/* .about {
   display: flex;
   justify-content: center;
   column-gap: 25px;
-}
+} */
 
-#side-text {
+/* #side-text {
   margin: 2rem;
   border: 2px solid #1a750e;
   padding-left: 1.5rem;
@@ -129,9 +129,9 @@ li a:hover {
   margin-right: 1.5rem;
   margin-top: 2rem;
   align-content: center;
-}
+} */
 
-.side-image-alt {
+/* .side-image-alt {
   background-image: url(/static/frontend/bottom-img.svg);
   background-size: cover;
   overflow: hidden;
@@ -141,19 +141,19 @@ li a:hover {
   margin-top: 2rem;
   align-content: center;
   border: 1px solid grey;
-}
+} */
 
 #image {
   width: 100%;
   height: 100%;
 }
 
-.text-block {
+/* .text-block {
   border: 2px solid #1a750e;
   text-align: center;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 
 .paragraph-block {
   padding-left: 1.5rem;
@@ -178,5 +178,120 @@ li a:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Big screen  */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px){
+  .navbar {
+    background-color: #1a750e;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 1rem;
+  }
+  #side-text {
+    margin: 2rem;
+    border: 2px solid #1a750e;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 50%;
+    height: 25rem;
+  }
+  
+  .side-image {
+    background-image: url(/static/frontend/nationals.jpg);
+    background-size: cover;
+    overflow: hidden;
+    width: 50%;
+    height: 25rem;
+    margin-right: 1.5rem;
+    margin-top: 2rem;
+    align-content: center;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+  }
+
+  #menu-toggle {
+    background-color: #1a750e;
+    border: none;
+    cursor: pointer;
+  }
+
+  .side-image-alt {
+    background-image: url(/static/frontend/bottom-img.svg);
+    background-size: cover;
+    overflow: hidden;
+    width: 50%;
+    height: 25rem;
+    margin-right: 1.5rem;
+    margin-top: 2rem;
+    align-content: center;
+    border: 1px solid grey;
+  }
+
+  .text-block {
+    border: 2px solid #1a750e;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Little screen */
+@media only screen and (min-device-width: 320px) and (max-device-width: 850px){
+  .navbar {
+    background-color: #1a750e;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 2.5rem;
+  }
+  #side-text {
+    margin: 2rem;
+    border: 2px solid #1a750e;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* height: 25rem; */
+  }
+  
+  .side-image {
+    background-image: url(/static/frontend/nationals.jpg);
+    background-size: cover;
+    overflow: hidden;
+    height: 25rem;
+    margin: 2rem;
+  }
+
+  .about {
+    display: block;
+  }
+
+  #menu-toggle {
+    background-color: #1a750e;
+    width: 35px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .side-image-alt {
+    background-image: url(/static/frontend/bottom-img.svg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 25rem;
+    margin: 2rem;
+    border: 1px solid grey;
+  }
+
+  .text-block {
+    border: 2px solid #1a750e;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: larger;
   }
 }
